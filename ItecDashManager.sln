@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35828.75 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItecDashManager.Domain", "Domain\ItecDashManager.Domain.csproj", "{5322A519-9EFE-4128-92B0-5F2714A70CAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItecDashManager.Data", "ItecDashManager.Data\ItecDashManager.Data.csproj", "{24207DB4-5383-4FBF-B27D-8998757D2BD0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5322A519-9EFE-4128-92B0-5F2714A70CAB} = {5322A519-9EFE-4128-92B0-5F2714A70CAB}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItecDashManager.Service", "ItecDashManager.Service\ItecDashManager.Service.csproj", "{807BBD18-B7D4-47EC-BC21-D47AC6888B5A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{24207DB4-5383-4FBF-B27D-8998757D2BD0} = {24207DB4-5383-4FBF-B27D-8998757D2BD0}
+		{5322A519-9EFE-4128-92B0-5F2714A70CAB} = {5322A519-9EFE-4128-92B0-5F2714A70CAB}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItecDashManager.WebApi", "WebApi\ItecDashManager.WebApi.csproj", "{6181A668-AB8A-4D80-8B8E-9BC44EF388D6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5322A519-9EFE-4128-92B0-5F2714A70CAB} = {5322A519-9EFE-4128-92B0-5F2714A70CAB}
+		{807BBD18-B7D4-47EC-BC21-D47AC6888B5A} = {807BBD18-B7D4-47EC-BC21-D47AC6888B5A}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5322A519-9EFE-4128-92B0-5F2714A70CAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5322A519-9EFE-4128-92B0-5F2714A70CAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5322A519-9EFE-4128-92B0-5F2714A70CAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5322A519-9EFE-4128-92B0-5F2714A70CAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24207DB4-5383-4FBF-B27D-8998757D2BD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24207DB4-5383-4FBF-B27D-8998757D2BD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24207DB4-5383-4FBF-B27D-8998757D2BD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24207DB4-5383-4FBF-B27D-8998757D2BD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{807BBD18-B7D4-47EC-BC21-D47AC6888B5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{807BBD18-B7D4-47EC-BC21-D47AC6888B5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{807BBD18-B7D4-47EC-BC21-D47AC6888B5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{807BBD18-B7D4-47EC-BC21-D47AC6888B5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6181A668-AB8A-4D80-8B8E-9BC44EF388D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6181A668-AB8A-4D80-8B8E-9BC44EF388D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6181A668-AB8A-4D80-8B8E-9BC44EF388D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6181A668-AB8A-4D80-8B8E-9BC44EF388D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AEA220C-3131-4ADE-BE20-92F80EB5594B}
+	EndGlobalSection
+EndGlobal
