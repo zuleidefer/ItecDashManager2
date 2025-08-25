@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ItecDashManager.Domain.Exceptions;
 
-    public class GlobalMessageExceptions 
+    public class GlobalMessageExceptions : Exception
     {
         public GlobalMessageExceptions(string message) 
         {
