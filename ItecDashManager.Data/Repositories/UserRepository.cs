@@ -19,10 +19,6 @@ public class UserRepository : IUserRepository
     {
         _context = context;
     }
-    public Task AddAsync(User user)
-    {
-        throw new NotImplementedException();
-    }
 
     public async Task<User> GetOneByEmailAsync(string email)
     {

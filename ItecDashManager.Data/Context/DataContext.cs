@@ -21,21 +21,25 @@ public class DataContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetAssembly(GetType()));
-
-        foreach (var entityType in modelBuilder.Model.GetEntityTypes())
-        {
-            foreach (var property in entityType.GetProperties()
-                .Where(p => p.ClrType == typeof(DateTime) || p.ClrType == typeof(DateTime?)))
-            {
-                property.SetColumnType("timestamp without time zone");
-            }
-        }
 
         base.OnModelCreating(modelBuilder);
     }
 
+    protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+    {
+       
+        configurationBuilder
+            .Properties<DateTime>()
+            .HaveColumnType("timestamp without time zone");
 
+       
+        configurationBuilder
+            .Properties<DateTime?>()
+            .HaveColumnType("timestamp without time zone");
+    }
+
+   
     public DbSet<User> Users { get; set; }
-
 }
