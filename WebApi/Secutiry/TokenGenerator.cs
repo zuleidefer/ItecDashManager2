@@ -8,31 +8,32 @@ using System.Security.Claims;
 using System.Text;
 using ItecDashManager.Domain.Constants;
 using ItecDashManager.Domain.Exceptions;
+using Newtonsoft.Json.Serialization;
 
 namespace ApiBase.Security
 {
     public static class TokenGenerator
     {
         private static string TokenKey = Environment.GetEnvironmentVariable("TOKEN_KEY");
-
+            
         public static string BuildToken(object properties, string[] niveisAcesso = null)
         {
             var claims = new List<Claim>();
 
-            //if (properties != null)
-            //{
-            //    foreach (var property in properties.GetType().GetProperties())
-            //    {
-            //        var value = property.GetValue(properties, null);
-            //        claims.Add(new Claim(property.Name, Newtonsoft.Json.JsonConvert.SerializeObject(value, new Newtonsoft.Json.JsonSerializerSettings()
-            //        {
-            //            ContractResolver = new CamelCasePropertyNamesContractResolver(),
-            //            ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore,
-            //        })));
-            //    }
-            //}
+            if (properties != null)
+            {
+                foreach (var property in properties.GetType().GetProperties())
+                {
+                    var value = property.GetValue(properties, null);
+                    claims.Add(new Claim(property.Name, Newtonsoft.Json.JsonConvert.SerializeObject(value, new Newtonsoft.Json.JsonSerializerSettings()
+                    {
+                        ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                        ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore,
+                    })));
+                }
+        }
 
-            //aqui está criando o token apenas com tipos de dados não complexos. Caso seja necessário, ajustar rotina acima para que dependendo do tipo, serialize ou não. String ou array de int não devem ser serializados, porém caso seja um objeto, aí pode
+            
             if (properties != null)
             {
                 foreach (var property in properties.GetType().GetProperties())
