@@ -1,23 +1,24 @@
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace ItecDashManager.WebApi;
-
-public class Program
+namespace ItecDashManager.WebApi
 {
-    public static void Main(string[] args)
+    public class Program
     {
-        CreateHostBuilder(args).Build().Run();
+        public static void Main(string[] args)
+        {
+            CreateHostBuilder(args).Build().Run();
+        }
+
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    string port = Environment.GetEnvironmentVariable("PORT") ?? "5001";
+                    string url = $"http://*:{port}";
+
+                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseUrls(url);
+                });
     }
-
-    public static IHostBuilder CreateHostBuilder(string[] args) =>
-        Host.CreateDefaultBuilder(args)
-            .ConfigureWebHostDefaults(webBuilder =>
-            {
-                string port = Environment.GetEnvironmentVariable("PORT") ?? "5001";
-                string url = $"http://*:{port}";
-
-                webBuilder.UseStartup<Startup>();
-                webBuilder.UseUrls(url);
-            });
 }
