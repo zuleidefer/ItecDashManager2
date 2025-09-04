@@ -8,6 +8,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using DotNetEnv;
+using ItecDashManager.Domain.Interfaces.ServiceInterfaces;
+using ItecDashManager.Service.Services;
+using ItecDashManager.Domain.Interfaces.RepositoryInterfaces;
+using ItecDashManager.Data.Repositories;
+using Microsoft.EntityFrameworkCore;
+using ItecDashManager.Data.Context;
 namespace ItecDashManager.WebApi
 {
     public class Startup
@@ -65,24 +71,10 @@ namespace ItecDashManager.WebApi
             services.AddControllers()
                     .AddNewtonsoftJson();
 
-            
-            services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-            .AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
-                {
-                    ValidateIssuerSigningKey = true,
-                    ValidateIssuer = false,
-                    ValidateAudience = false,
-                    ValidateLifetime = false,
-                    IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(
-                        Encoding.UTF8.GetBytes(EnvironmentConstants.TOKEN_KEY)),
-                };
-            });
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddDbContext<DataContext>(options =>
+                options.UseNpgsql(EnvironmentConstants.CONNECTION_STRING));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

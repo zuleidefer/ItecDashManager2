@@ -23,6 +23,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Domain\ItecDashManager.Domain.csproj" />
 	<ProjectReference Include="..\ItecDashManager.Data\ItecDashManager.Data.csproj" />
+	<ProjectReference Include="..\ItecDashManager.Service\ItecDashManager.Service.csproj" />
   </ItemGroup>
 
 </Project>

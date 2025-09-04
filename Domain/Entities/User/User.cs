@@ -12,7 +12,7 @@ namespace ItecDashManager.Domain.Entities.User;
     public required string Name { get; set; }
     public required string Email { get; set; }
     public required string Password { get; set; }
-    public long MediaId { get; set; }
+    public long? MediaId { get; set; }
    
 
 }
