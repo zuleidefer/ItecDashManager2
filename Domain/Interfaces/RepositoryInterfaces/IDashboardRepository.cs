@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ItecDashManager.Domain.Interfaces.RepositoryInterfaces;
-    public class IDashboardRepository
+    public interface IDashboardRepository
     {
+        
     }
 

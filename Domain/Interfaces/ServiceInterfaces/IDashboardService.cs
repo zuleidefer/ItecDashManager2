@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ItecDashManager.Domain.Interfaces.ServiceInterfaces;
 
-    public class IDashboardService
+    public interface IDashboardService
     {
     }
 
