@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ItecDashManager.Domain.Entities.Dashboard;
+namespace ItecDashManager.Domain.Entities.UserDashboard;
 
     
     public class Dashboard
