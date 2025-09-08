@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ItecDashManager.Domain.Entities.Dashboard;
+using ItecDashManager.Domain.Entities.UserDashboard;
 
 namespace ItecDashManager.Domain.Interfaces.ServiceInterfaces;
 

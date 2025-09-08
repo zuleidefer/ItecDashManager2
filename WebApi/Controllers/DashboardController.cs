@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ItecDashManager.Domain.Entities.Dashboard;
+using ItecDashManager.Domain.Entities.UserDashboard;
 using ItecDashManager.Domain.Interfaces.ServiceInterfaces;
 using ItecDashManager.WebApi.DTO.Dashboard;
 using ItecDashManager.WebApi.ViewModels.Dashboard;

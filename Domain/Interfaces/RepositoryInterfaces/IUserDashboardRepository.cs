@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ItecDashManager.Domain.Entities.UserDashboard;
 
 namespace ItecDashManager.Domain.Interfaces.RepositoryInterfaces;
 
-    public class IUserDashboardRepository
-    {
-    }
-
+public interface IUserDashboardRepository
+{
+    
+}

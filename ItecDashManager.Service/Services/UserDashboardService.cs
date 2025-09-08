@@ -1,12 +1,15 @@
-﻿using System;
+﻿using ItecDashManager.Domain.Entities.UserDashboard;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace ItecDashManager.Service.Services;
+namespace ItecDashManager.Service.Interfaces;
 
-    public class UserDashboardService
-    {
-    }
-
+public interface IUserDashboardService
+{
+    Task<IEnumerable<UserDashboard>> GetAllAsync();
+    Task<UserDashboard?> GetByIdAsync(Guid id);
+    Task AddAsync(UserDashboard userDashboard);
+    Task UpdateAsync(UserDashboard userDashboard);
+    Task DeleteAsync(UserDashboard userDashboard);
+}
