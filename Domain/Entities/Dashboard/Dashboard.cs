@@ -11,8 +11,8 @@ namespace ItecDashManager.Domain.Entities.Dashboard;
     public class Dashboard
     {
         public Guid Id { get; set; }
-        public required string Name { get; set; }
-        public required string Url { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Url { get; set; } = string.Empty;
 
    
         public ICollection<UserDashboard.UserDashboard> UserDashboards { get; set; } = new List<UserDashboard.UserDashboard>();
