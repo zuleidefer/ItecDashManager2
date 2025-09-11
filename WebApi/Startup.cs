@@ -54,9 +54,15 @@ namespace ItecDashManager.WebApi
                     };
                 });
 
-            services.AddAutoMapper(typeof(AutoMapperProfileDTOs), typeof(AutoMapperProfileViewModels));
+            services.AddAutoMapper(config =>
+            {
+                config.AddProfile <AutoMapperProfileDTOs> ();
+                config.AddProfile <AutoMapperProfileViewModels> ();
+            });
 
-          
+
+
+
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAngularDev",
@@ -73,6 +79,10 @@ namespace ItecDashManager.WebApi
 
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IDashboardService, DashboardService>();
+            services.AddScoped<IDashboardRepository, DashboardRepository>();
+            services.AddScoped<IUserDashboardRepository, UserDashboardRepository>();
+
             services.AddDbContext<DataContext>(options =>
                 options.UseNpgsql(EnvironmentConstants.CONNECTION_STRING));
         }
