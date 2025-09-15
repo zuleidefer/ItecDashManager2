@@ -33,7 +33,7 @@ namespace ItecDashManager.WebApi.Mappings
             CreateMap<RoleAction, RoleActionDTO>().PreserveReferences().MaxDepth(0);
             CreateMap<Media, MediaDTO>().PreserveReferences().MaxDepth(0);
             CreateMap<Company, CompanyDTO>().PreserveReferences().MaxDepth(0);
-            CreateMap<Dashboard, DashboardDTO>().PreserveReferences().MaxDepth(0);
+            CreateMap<Dashboard, DashboardDTO>().PreserveReferences().MaxDepth(0).ReverseMap();
             CreateMap<User, UserDTO>().PreserveReferences().MaxDepth(0);
             CreateMap<UserCompanyRole, UserCompanyRoleDTO>().PreserveReferences().MaxDepth(0);
             CreateMap<UserCompany, UserCompanyDTO>().PreserveReferences().MaxDepth(0);
