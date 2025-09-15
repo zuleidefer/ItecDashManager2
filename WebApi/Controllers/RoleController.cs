@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using ItecDashManager.Domain.Entities.Role;
+using ItecDashManager.Domain.Entities.Roles;
 using ItecDashManager.Domain.Interfaces.ServiceInterfaces;
 using ItecDashManager.WebApi.DTO.Role;
 using ItecDashManager.WebApi.ViewModels.Role;

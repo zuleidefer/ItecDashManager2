@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ItecDashManager.Domain.Entities.Action;
 
-    public class ActionValidator
+    public class ApplicationActionValidator
     {
     }
 

@@ -4,7 +4,7 @@ using ItecDashManager.Domain.Entities;
 using ItecDashManager.Domain.Entities.User;
 using ItecDashManager.WebApi.DTO.User;
 using ItecDashManager.WebApi.DTO;
-using ItecDashManager.Domain.Entities.Role;
+using ItecDashManager.Domain.Entities.Roles;
 using ItecDashManager.WebApi.DTO.Role;
 using ItecDashManager.WebApi.DTO.Action;
 using ItecDashManager.WebApi.DTO.RoleAction;
@@ -29,7 +29,7 @@ namespace ItecDashManager.WebApi.Mappings
         public AutoMapperProfileDTOs()
         {
             CreateMap<Role, RoleDTO>().PreserveReferences().MaxDepth(0);
-            CreateMap<Action, ActionDTO>().PreserveReferences().MaxDepth(0);
+            CreateMap<Action, ApplicationActionDTO>().PreserveReferences().MaxDepth(0);
             CreateMap<RoleAction, RoleActionDTO>().PreserveReferences().MaxDepth(0);
             CreateMap<Media, MediaDTO>().PreserveReferences().MaxDepth(0);
             CreateMap<Company, CompanyDTO>().PreserveReferences().MaxDepth(0);

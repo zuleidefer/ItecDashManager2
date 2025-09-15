@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ItecDashManager.Domain.Entities.Roles;
+namespace ItecDashManager.Domain.Entities.Actions;
 
-    public class Role
+    public class ApplicationAction
     {
         [Key]
         public Guid Id { get; set; }
@@ -15,5 +15,6 @@ namespace ItecDashManager.Domain.Entities.Roles;
         [Required]
         [StringLength(100)]
         public string Name { get; set; } = string.Empty;
-    }
 
+        public string Description { get; set; } = string.Empty;
+    }

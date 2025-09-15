@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace ItecDashManager.Domain.Interfaces.ServiceInterfaces;
 
-    public class IActionService
+    public interface IActionService
     {
+        Task<IEnumerable<Action>> GetAllAsync();
+        Task<Action?> GetByIdAsync(Guid id);
+        Task AddAsync(Action action);
+        Task UpdateAsync(Action action);
+        Task DeleteAsync(Action action);
     }
 
