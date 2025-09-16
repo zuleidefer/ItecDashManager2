@@ -10,6 +10,7 @@ using ItecDashManager.Domain.Entities.User;
 using ItecDashManager.Domain.Entities.UserCompany;
 using ItecDashManager.Domain.Entities.UserCompanyRole;
 using ItecDashManager.Domain.Entities.UserDashboard;
+using ItecDashManager.Domain.Entities.Actions;
 using ItecDashManager.WebApi.ViewModels;
 using ItecDashManager.WebApi.ViewModels.Action;
 using ItecDashManager.WebApi.ViewModels.Company;
@@ -29,7 +30,7 @@ namespace ItecDashManager.WebApi.Mappings
         public AutoMapperProfileViewModels()
         {
             CreateMap<RoleViewModel, Role>().ReverseMap();
-            CreateMap<ApplicatonActionViewModel, Action>().ReverseMap();
+            CreateMap<ApplicatonActionViewModel, ApplicationAction>().ReverseMap();
             CreateMap<RoleActionViewModel, RoleAction>().ReverseMap();
             CreateMap<MediaViewModel, Media>().ReverseMap();
             CreateMap<CompanyViewModel, Company>().ReverseMap();

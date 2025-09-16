@@ -9,10 +9,10 @@ namespace ItecDashManager.Domain.Interfaces.ServiceInterfaces;
 
     public interface IRoleActionService
     {
-        Task<IEnumerable<RoleAction>> GetAllAsync();
-        Task<RoleAction?> GetByIdAsync(Guid id);
-        Task AddAsync(RoleAction roleAction);
-        Task UpdateAsync(RoleAction roleAction);
-        Task DeleteAsync(RoleAction roleAction);
+        public Task<IEnumerable<RoleAction>> GetAllAsync();
+        public Task<RoleAction?> GetByIdAsync(Guid id);
+        public Task AddAsync(RoleAction roleAction);
+        public Task UpdateAsync(RoleAction roleAction);
+        public Task DeleteAsync(RoleAction roleAction);
     }
 

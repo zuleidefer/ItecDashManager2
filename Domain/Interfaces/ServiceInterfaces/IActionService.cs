@@ -8,10 +8,10 @@ namespace ItecDashManager.Domain.Interfaces.ServiceInterfaces;
 
     public interface IActionService
     {
-        Task<IEnumerable<Action>> GetAllAsync();
-        Task<Action?> GetByIdAsync(Guid id);
-        Task AddAsync(Action action);
-        Task UpdateAsync(Action action);
-        Task DeleteAsync(Action action);
+        public Task<IEnumerable<Action>> GetAllAsync();
+        public Task<Action?> GetByIdAsync(Guid id);
+        public Task AddAsync(Action action);
+        public Task UpdateAsync(Action action);
+        public Task DeleteAsync(Action action);
     }
 
