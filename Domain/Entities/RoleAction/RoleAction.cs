@@ -18,5 +18,5 @@ public class RoleAction
 
     [ForeignKey("Action")]
     public Guid ActionId { get; set; }
-    public Actions.ApplicationAction Action { get; set; } = default!;
+    public ApplicationAction Action { get; set; } = default!;
 }

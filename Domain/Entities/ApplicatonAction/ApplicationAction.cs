@@ -9,6 +9,8 @@ namespace ItecDashManager.Domain.Entities.Actions;
 
     public class ApplicationAction
     {
+        public ApplicationAction() { }
+
         [Key]
         public Guid Id { get; set; }
 

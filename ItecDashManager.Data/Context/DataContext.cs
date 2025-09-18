@@ -15,6 +15,9 @@ using ItecDashManager.Domain.Entities.UserDashboard;
 using ItecDashManager.Domain.Entities.RoleAction;
 using ItecDashManager.Domain.Entities.Roles;
 using ItecDashManager.Domain.Entities.Actions;
+using ItecDashManager.Domain.Entities.Company;
+using ItecDashManager.Domain.Entities.UserCompany;
+using ItecDashManager.Domain.Entities.UserCompanyRole;
 
 namespace ItecDashManager.Data.Context;
 
@@ -26,9 +29,9 @@ public class DataContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        
-        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetAssembly(GetType()));
         modelBuilder.HasPostgresExtension("uuid-ossp");
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetAssembly(GetType()));
+        
 
         base.OnModelCreating(modelBuilder);
     }
@@ -53,5 +56,8 @@ public class DataContext : DbContext
     public DbSet<Role> Roles { get; set; }
     public DbSet<ApplicationAction> Actions { get; set; }
     public DbSet<RoleAction> RoleActions { get; set; }
+    public DbSet<Company> Companies { get; set; }
+    public DbSet<UserCompany> UserCompanies { get; set; }
+    public DbSet<UserCompanyRole> UserCompanyRoles { get; set; }
 
 }

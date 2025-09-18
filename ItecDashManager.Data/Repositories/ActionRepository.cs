@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ItecDashManager.Data.Context;
+using ItecDashManager.Domain.Entities.Actions;
 using ItecDashManager.Domain.Interfaces.RepositoryInterfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,13 +25,23 @@ namespace ItecDashManager.Data.Repositories;
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(Action action)
+    public Task AddAsync(ApplicationAction action)
+    {
+        throw new NotImplementedException();
+    }
+
+    public async Task DeleteAsync(Action action)
         {
             _context.Set<Action>().Remove(action);
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Action>> GetAllAsync()
+    public Task DeleteAsync(ApplicationAction action)
+    {
+        throw new NotImplementedException();
+    }
+
+    public async Task<IEnumerable<Action>> GetAllAsync()
         {
             return await _context.Set<Action>().ToListAsync();
         }
@@ -45,5 +56,20 @@ namespace ItecDashManager.Data.Repositories;
             _context.Set<Action>().Update(action);
             await _context.SaveChangesAsync();
         }
+
+    public Task UpdateAsync(ApplicationAction action)
+    {
+        throw new NotImplementedException();
     }
+
+    Task<IEnumerable<ApplicationAction>> IActionRepository.GetAllAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+    Task<ApplicationAction?> IActionRepository.GetByIdAsync(Guid id)
+    {
+        throw new NotImplementedException();
+    }
+}
 

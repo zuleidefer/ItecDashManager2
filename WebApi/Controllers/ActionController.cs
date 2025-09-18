@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using ItecDashManager.Domain.Entities.Action;
+using ItecDashManager.Domain.Entities.Actions;
 using ItecDashManager.Domain.Interfaces.ServiceInterfaces;
 using ItecDashManager.WebApi.DTO.Action;
 using ItecDashManager.WebApi.ViewModels.Action;
@@ -41,7 +41,7 @@ public class ActionController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] ApplicationActionDTO dto)
     {
-        var action = _mapper.Map<Action>(dto);
+        var action = _mapper.Map<ApplicationAction>(dto);
         await _actionService.AddAsync(action);
         return Ok(_mapper.Map<ApplicatonActionViewModel>(action));
     }

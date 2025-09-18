@@ -84,6 +84,16 @@ namespace ItecDashManager.WebApi
             services.AddScoped<IUserDashboardRepository, UserDashboardRepository>();
             services.AddScoped<IRoleRepository, RoleRepository>();
             services.AddScoped<IRoleService, RoleService>();
+            services.AddScoped<IActionService, ActionService>();
+            services.AddScoped<IActionRepository, ActionRepository>();
+            services.AddScoped<IRoleActionService, RoleActionService>();
+            services.AddScoped<IRoleActionRepository, RoleActionRepository>();
+            services.AddScoped<ICompanyService, CompanyService>();
+            services.AddScoped<ICompanyRepository, CompanyRepository>();
+            services.AddScoped<IUserCompanyService, UserCompanyService>();
+            services.AddScoped<IUserCompanyRepository, UserCompanyRepository>();
+            services.AddScoped<IUserCompanyRoleService, UserCompanyRoleService>();
+            services.AddScoped<IUserCompanyRoleRepository, UserCompanyRoleRepository>();
 
             services.AddDbContext<DataContext>(options =>
                 options.UseNpgsql(EnvironmentConstants.CONNECTION_STRING));
