@@ -38,7 +38,10 @@ namespace ItecDashManager.WebApi.Mappings
             CreateMap<UserViewModel, User>().ReverseMap();
             CreateMap<UserCompanyRoleViewModel, UserCompanyRole>().ReverseMap();
             CreateMap<UserCompanyViewModel, UserCompany>().ReverseMap();
-            CreateMap<UserDashboardViewModel, UserDashboard>().ReverseMap();
+            CreateMap<UserDashboard, UserDashboardViewModel>()
+                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User != null ? src.User.Name : string.Empty))
+                .ForMember(dest => dest.DashboardName, opt => opt.MapFrom(src => src.Dashboard != null ? src.Dashboard.Name : string.Empty))
+                .ReverseMap();
         }
     }
 }

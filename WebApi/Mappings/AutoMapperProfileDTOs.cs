@@ -38,7 +38,7 @@ namespace ItecDashManager.WebApi.Mappings
             CreateMap<User, UserDTO>().PreserveReferences().MaxDepth(0);
             CreateMap<UserCompanyRole, UserCompanyRoleDTO>().PreserveReferences().MaxDepth(0);
             CreateMap<UserCompany, UserCompanyDTO>().PreserveReferences().MaxDepth(0);
-            CreateMap<UserDashboard, UserDashboardDTO>().PreserveReferences().MaxDepth(0);
+            CreateMap<UserDashboard, UserDashboardDTO>().PreserveReferences().MaxDepth(0).ReverseMap();
         }
     }
 }

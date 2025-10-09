@@ -1,14 +1,17 @@
 ﻿using AutoMapper;
 using ItecDashManager.Domain.Entities.UserDashboard;
+using ItecDashManager.Domain.Interfaces.RepositoryInterfaces;
 using ItecDashManager.Domain.Interfaces.ServiceInterfaces;
 using ItecDashManager.WebApi.DTO.UserDashboard;
 using ItecDashManager.WebApi.ViewModels.UserDashboard;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ItecDashManager.WebApi.Controllers;
 
     [ApiController]
     [Route("api/[controller]")]
+    [AllowAnonymous]
     public class UserDashboardController : ControllerBase
 {
             private readonly IUserDashboardService _userDashboardService;
@@ -38,6 +41,10 @@ namespace ItecDashManager.WebApi.Controllers;
             [HttpPost]
             public async Task<IActionResult> Create([FromBody] UserDashboardDTO dto)
             {
+                if (dto.UserId == Guid.Empty || dto.DashboardId == Guid.Empty)
+                {
+                    return BadRequest(new { message = "Os IDs de Usuário e Dashboard são obrigatórios." });
+                }
                 var entity = _mapper.Map<UserDashboard>(dto);
                 await _userDashboardService.AddAsync(entity);
                 return Ok(_mapper.Map<UserDashboardViewModel>(entity));

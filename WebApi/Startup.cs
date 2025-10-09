@@ -14,6 +14,7 @@ using ItecDashManager.Domain.Interfaces.RepositoryInterfaces;
 using ItecDashManager.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using ItecDashManager.Data.Context;
+
 namespace ItecDashManager.WebApi
 {
     public class Startup
@@ -82,6 +83,7 @@ namespace ItecDashManager.WebApi
             services.AddScoped<IDashboardService, DashboardService>();
             services.AddScoped<IDashboardRepository, DashboardRepository>();
             services.AddScoped<IUserDashboardRepository, UserDashboardRepository>();
+            services.AddScoped<IUserDashboardService, UserDashboardService>();
             services.AddScoped<IRoleRepository, RoleRepository>();
             services.AddScoped<IRoleService, RoleService>();
             services.AddScoped<IActionService, ActionService>();
